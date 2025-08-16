@@ -1,4 +1,11 @@
 public class Main {
+    private static final String url = "jdbc:mysql://localhost:3306/?user=root";
+
+    private static final String username = "root";
+
+    private static final String password = "@ani.8727M";
+
+
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -11,5 +18,7 @@ public class Main {
  Flow of connect JDBC
  1. Connect IDE with a necessary Connector - jar file in project structure
 
- 2. Create Connection - driver laod
+ 2. Load necessary Driver - Driver load
+
+ 3. Create Connection - three Components(url,username,password)
  */
