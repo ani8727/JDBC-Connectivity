@@ -91,26 +91,57 @@ public class Main {
 //            }
 
             // for retrieve value
+//
+//            String query = "SELECT * FROM students WHERE ID = ?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//
+//            preparedStatement.setInt(1,1);
+//
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//
+//            if(resultSet.next()){
+//                System.out.println("Id: "+resultSet.getInt("id"));
+//                System.out.println("Name: "+resultSet.getString("name"));
+//                System.out.println("marks: "+resultSet.getDouble("marks"));
+//            }else{
+//                System.out.println("not retrieve data");
+//            }
 
-            String query = "SELECT * FROM students WHERE ID = ?";
+            // for update value
+//            String query= "UPDATE students SET marks = ? WHERE name = ?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//
+//            preparedStatement.setDouble(1,99.5);
+//            preparedStatement.setString(2,"Aniket");
+//
+//            int rowAffected = preparedStatement.executeUpdate();
+//
+//            if(rowAffected>0){
+//                System.out.println("Updated Successfully");
+//            }else {
+//                System.out.println("Not Updated");
+//            }
+
+            // for delete value
+            String query= "DELETE FROM students WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setInt(1,1);
+            preparedStatement.setInt(1,3);
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+            int rowAffected = preparedStatement.executeUpdate();
 
-            if(resultSet.next()){
-                System.out.println("Id: "+resultSet.getInt("id"));
-                System.out.println("Name: "+resultSet.getString("name"));
-                System.out.println("marks: "+resultSet.getDouble("marks"));
-            }else{
-                System.out.println("not retrieve data");
+            if(rowAffected>0){
+                System.out.println("Delete Successfully");
+            }else {
+                System.out.println("Not Delete");
             }
+
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
     }
 }
+
 /*
  Flow of connect JDBC
  1. Connect IDE with a necessary Connector - jar file in project structure
